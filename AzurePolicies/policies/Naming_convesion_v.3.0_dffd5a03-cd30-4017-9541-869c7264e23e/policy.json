@@ -1,0 +1,30 @@
+{
+ "properties": {
+  "displayName": "Naming convesion v.3.0",
+  "policyType": "Custom",
+  "mode": "Indexed",
+  "description": "The resource name should start with rg-nonprod-",
+  "metadata": {
+   "category": "Compute",
+   "createdBy": "b9e6c900-303f-478b-aee8-c1d4c6827296",
+   "createdOn": "2020-10-12T10:01:47.7605363Z",
+   "updatedBy": "b9e6c900-303f-478b-aee8-c1d4c6827296",
+   "updatedOn": "2020-10-12T11:28:03.1029667Z"
+  },
+  "parameters": {},
+  "policyRule": {
+   "if": {
+    "not": {
+     "field": "name",
+     "like": "[concat('rg-nonprod','-','*')]"
+    }
+   },
+   "then": {
+    "effect": "deny"
+   }
+  }
+ },
+ "id": "/subscriptions/d5789001-aae2-4a8e-bc19-09abdbb0d7a4/providers/Microsoft.Authorization/policyDefinitions/dffd5a03-cd30-4017-9541-869c7264e23e",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "dffd5a03-cd30-4017-9541-869c7264e23e"
+}

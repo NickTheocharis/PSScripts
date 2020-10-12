@@ -1,0 +1,28 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Naming convesion v.3.0",
+  "policyDefinitionId": "/subscriptions/d5789001-aae2-4a8e-bc19-09abdbb0d7a4/providers/Microsoft.Authorization/policyDefinitions/dffd5a03-cd30-4017-9541-869c7264e23e",
+  "scope": "/subscriptions/d5789001-aae2-4a8e-bc19-09abdbb0d7a4",
+  "notScopes": [
+   "/subscriptions/d5789001-aae2-4a8e-bc19-09abdbb0d7a4/resourceGroups/rg-test-westeurope-NT"
+  ],
+  "parameters": {},
+  "description": "",
+  "metadata": {
+   "assignedBy": "Nikolaos Theocharis Theocharis",
+   "parameterScopes": {},
+   "createdBy": "b9e6c900-303f-478b-aee8-c1d4c6827296",
+   "createdOn": "2020-10-12T10:02:09.5041518Z",
+   "updatedBy": "b9e6c900-303f-478b-aee8-c1d4c6827296",
+   "updatedOn": "2020-10-12T11:24:06.8830357Z"
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/d5789001-aae2-4a8e-bc19-09abdbb0d7a4/providers/Microsoft.Authorization/policyAssignments/6ef1a80c1c3342c7a6708d85",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "6ef1a80c1c3342c7a6708d85"
+}
