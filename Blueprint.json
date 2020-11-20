@@ -1,0 +1,234 @@
+{
+  "properties": {
+    "description": "Deploys resource groups,subnets, vpn gateway and adds azure monitor",
+    "targetScope": "subscription",
+    "parameters": {
+      "namingConvention16.1_Env": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Scope environment (Policy: Naming Convention 16.1)"
+        },
+        "defaultValue": "prod",
+        "allowedValues": [
+          "prod",
+          "test"
+        ]
+      },
+      "vnet,GW,Subnet_Env": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Env (Vnet,GW,Subnet)",
+          "description": "Environment scope"
+        },
+        "defaultValue": "prod",
+        "allowedValues": []
+      },
+      "vnet,GW,Subnet_vnetAddressPrefix": {
+        "type": "string",
+        "metadata": {
+          "displayName": "vnetAddressPrefix (Vnet,GW,Subnet)",
+          "description": "Address prefix"
+        },
+        "defaultValue": "10.0.0.0/16",
+        "allowedValues": []
+      },
+      "vnet,GW,Subnet_subnet1Prefix": {
+        "type": "string",
+        "metadata": {
+          "displayName": "subnet1Prefix (Vnet,GW,Subnet)",
+          "description": "Subnet 1 Prefix"
+        },
+        "defaultValue": "10.0.0.0/24",
+        "allowedValues": []
+      },
+      "vnet,GW,Subnet_subnet1Number": {
+        "type": "string",
+        "metadata": {
+          "displayName": "subnet1Number (Vnet,GW,Subnet)",
+          "description": "Sequence number"
+        },
+        "defaultValue": "001",
+        "allowedValues": []
+      },
+      "vnet,GW,Subnet_subnet2Prefix": {
+        "type": "string",
+        "metadata": {
+          "displayName": "subnet2Prefix (Vnet,GW,Subnet)",
+          "description": "Subnet 2 Prefix"
+        },
+        "defaultValue": "10.0.1.0/24",
+        "allowedValues": []
+      },
+      "vnet,GW,Subnet_subnet2Number": {
+        "type": "string",
+        "metadata": {
+          "displayName": "subnet2Number (Vnet,GW,Subnet)",
+          "description": "Subnet 2 Sequence number"
+        },
+        "defaultValue": "002",
+        "allowedValues": []
+      },
+      "vnet,GW,Subnet_subnetVPNGatewayPrefix": {
+        "type": "string",
+        "metadata": {
+          "displayName": "subnetVPNGatewayPrefix (Vnet,GW,Subnet)",
+          "description": "Subnet VPN Gateway Prefix"
+        },
+        "defaultValue": "10.0.100.0/24",
+        "allowedValues": []
+      },
+      "vnet,GW,Subnet_location": {
+        "type": "string",
+        "metadata": {
+          "displayName": "location (Vnet,GW,Subnet)",
+          "description": "Location for all resources."
+        },
+        "allowedValues": []
+      },
+      "vnet,GW,Subnet_sku": {
+        "type": "string",
+        "metadata": {
+          "displayName": "sku (Vnet,GW,Subnet)"
+        },
+        "defaultValue": "VpnGw1",
+        "allowedValues": []
+      },
+      "vnet,GW,Subnet_gatewayType": {
+        "type": "string",
+        "metadata": {
+          "displayName": "gatewayType (Vnet,GW,Subnet)"
+        },
+        "defaultValue": "Vpn",
+        "allowedValues": [
+          "Vpn",
+          "ExpressRoute"
+        ]
+      },
+      "vnet,GW,Subnet_vpnGatewayGeneration": {
+        "type": "string",
+        "metadata": {
+          "displayName": "vpnGatewayGeneration (Vnet,GW,Subnet)"
+        },
+        "defaultValue": "Generation1",
+        "allowedValues": []
+      },
+      "vnet,GW,Subnet_vpnType": {
+        "type": "string",
+        "metadata": {
+          "displayName": "vpnType (Vnet,GW,Subnet)"
+        },
+        "defaultValue": "RouteBased",
+        "allowedValues": [
+          "RouteBased",
+          "PolicyBased"
+        ]
+      },
+      "vnet,GW,Subnet_VnetNumber": {
+        "type": "string",
+        "metadata": {
+          "displayName": "VnetNumber (Vnet,GW,Subnet)"
+        },
+        "allowedValues": []
+      },
+      "namingConvention16.1_Env_1": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Scope environment (Policy: Naming Convention 16.1)"
+        },
+        "defaultValue": "prod",
+        "allowedValues": [
+          "prod",
+          "test"
+        ]
+      },
+      "storageAccount_storageAccountType": {
+        "type": "string",
+        "metadata": {
+          "displayName": "storageAccountType (Storage Account)",
+          "description": "Storage Account type"
+        },
+        "defaultValue": "Standard_LRS",
+        "allowedValues": [
+          "Standard_LRS",
+          "Standard_GRS",
+          "Standard_ZRS",
+          "Premium_LRS"
+        ]
+      },
+      "storageAccount_location": {
+        "type": "string",
+        "metadata": {
+          "displayName": "location (Storage Account)",
+          "description": "Location for all resources."
+        },
+        "allowedValues": []
+      },
+      "storageAccount_Name": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Name (Storage Account)",
+          "description": "Storage account purprose 5 Chars"
+        },
+        "allowedValues": []
+      },
+      "storageAccount_Env": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Env (Storage Account)",
+          "description": "Environment of the resource"
+        },
+        "defaultValue": "prod",
+        "allowedValues": [
+          "prod",
+          "test",
+          "nonprod"
+        ]
+      },
+      "storageAccount_Number": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Number (Storage Account)",
+          "description": "Sequence number"
+        },
+        "allowedValues": []
+      },
+      "namingConvention16.1_Env_2": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Scope environment (Policy: Naming Convention 16.1)"
+        },
+        "defaultValue": "prod",
+        "allowedValues": [
+          "prod",
+          "test"
+        ]
+      }
+    },
+    "resourceGroups": {
+      "ResourceGroup": {
+        "name": "rg-vnet-prod-001",
+        "location": "westeurope",
+        "metadata": {
+          "displayName": "Deploy Network Resource Group"
+        },
+        "dependsOn": []
+      },
+      "ResourceGroup2": {
+        "name": "rg-systems-prod-001",
+        "location": "westeurope",
+        "metadata": {
+          "displayName": "Deploy Systems Resource Group"
+        },
+        "dependsOn": []
+      },
+      "ResourceGroup3": {
+        "name": "rg-backup-prod-001",
+        "location": "westeurope",
+        "metadata": {
+          "displayName": "Deploy Backup Resource Group"
+        },
+        "dependsOn": []
+      }
+    }
+  }
+}
